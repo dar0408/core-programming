@@ -7,13 +7,18 @@
 // O/P => The discount amount is INR ___ and final discounted fee is INR ___
 
 
-
 public class ChargingFee {
     public static void main(String[] args) {
-        int fee = 125000;
-        int discountPercent = 10;
+        int fee = 125000; // Initial fee amount
+        int discountPercent = 10; // Discount percentage
+
+        // Calculate the discount amount (discount = fee * discountPercent / 100)
         int discount = fee * discountPercent / 100;
+
+        // Calculate the final fee after applying the discount (finalFee = fee - discount)
         int finalFee = fee - discount;
-        System.out.println("The discount amount is INR " + discount + " and final discounted fee is INR " + finalFee);
+
+        System.out.println("The discount amount is INR " + discount + 
+                " and final discounted fee is INR " + finalFee);
     }
 }

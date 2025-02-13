@@ -7,21 +7,27 @@
 // I/P => fee, discountPrecent
 // O/P => The results of Int Operations are —-, -—, and —-
 
-
 import java.util.Scanner;
-public class IntOperation{
+
+public class IntOperation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Taking input values for a, b, and c
         System.out.println("Enter the value of a: ");
         int a = sc.nextInt();
         System.out.println("Enter the value of b: ");
         int b = sc.nextInt();
         System.out.println("Enter the value of c: ");
         int c = sc.nextInt();
-        int result1 = a + b * c;
-        int result2 = a * b + c;
-        int result3 = c + a / b;
-        int result4 = a % b + c;
+
+        // Performing different integer operations
+        int result1 = a + b * c; // Multiplication has higher precedence than addition
+        int result2 = a * b + c; // Multiplication performed first, then addition
+        int result3 = c + a / b; // Division has higher precedence than addition
+        int result4 = a % b + c; // Modulus operation performed first, then addition
+
+        // Displaying the results of the integer operations
         System.out.println("The results of Int Operations are " + result1 + ", " + result2 + ", " + result3 + ", and " + result4);
     }
 }

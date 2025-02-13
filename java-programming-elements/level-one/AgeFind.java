@@ -4,12 +4,11 @@
 
 
 
-
-public class AgeFind {
-    public static void main(String[] args) {
-        int birthYear = 2000;
-        int currentYear = 2024;
-        int age = currentYear - birthYear;
-        System.out.println("Harry's age in 2024 is " + age);
+public class AgeFind { // Defines a class named AgeFind
+    public static void main(String[] args) { // Main method, the entry point of the program
+        int birthYear = 2000; // Declares and initializes a variable for the birth year
+        int currentYear = 2024; // Declares and initializes a variable for the current year
+        int age = currentYear - birthYear; // Calculates the age by subtracting birth year from current year
+        System.out.println("Harry's age in 2024 is " + age); // Prints the calculated age
     }
 }

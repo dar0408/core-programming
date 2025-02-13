@@ -8,13 +8,18 @@
 // O/P => The total miles is ___ mile for the given ___ km
 
 import java.util.Scanner;
+
 public class Convert {
     public static void main(String[] args) {
         double km;
         Scanner input = new Scanner(System.in);
+
         System.out.println("Enter the distance in kilometers: ");
         km = input.nextDouble();
+
+        // Convert kilometers to miles (1 mile = 1.6 km)
         double miles = km / 1.6;
+
         System.out.println("The total miles is " + miles + " mile for the given " + km + " km");
     }
 }

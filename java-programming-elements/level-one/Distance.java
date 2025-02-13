@@ -4,11 +4,13 @@
 // O/P => The distance  ___ km in miles is ___
 
 
-
 public class Distance {
     public static void main(String[] args) {
-        double distanceInKm = 10.8;
+        double distanceInKm = 10.8; // Distance in kilometers
+
+        // Convert kilometers to miles (1 mile = 1.6 km)
         double distanceInMiles = distanceInKm / 1.6;
+
         System.out.println("The distance " + distanceInKm + " km in miles is " + distanceInMiles);
     }
 }

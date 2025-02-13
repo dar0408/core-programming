@@ -7,19 +7,28 @@
 // I/P => fee, discountPrecent
 // O/P => The discount amount is INR ___ and final discounted fee is INR ___
 
-
 import java.util.Scanner;
+
 public class UserInput {
     public static void main(String[] args) {
-        int fee;
-        int discountPercent;
+        int fee; // Stores the original fee amount
+        int discountPercent; // Stores the discount percentage
+
         Scanner input = new Scanner(System.in);
+
         System.out.println("Enter the fee: ");
         fee = input.nextInt();
+
         System.out.println("Enter the discount percentage: ");
         discountPercent = input.nextInt();
+
+        // Calculate the discount amount using the formula: discount = (fee * discountPercent) / 100
         int discount = fee * discountPercent / 100;
+
+        // Calculate the final fee after applying the discount
         int finalFee = fee - discount;
-        System.out.println("The discount amount is INR " + discount + " and final discounted fee is INR " + finalFee);
+
+        System.out.println("The discount amount is INR " + discount + 
+                " and final discounted fee is INR " + finalFee);
     }
 }

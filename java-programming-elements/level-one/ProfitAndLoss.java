@@ -9,14 +9,22 @@
 // The Profit is INR ___ and the Profit Percentage is ___
 
 
-
 public class ProfitAndLoss {
     public static void main(String[] args) {
-        int costPrice = 129;
-        int sellingPrice = 191;
+        int costPrice = 129; // The original price of the item
+        int sellingPrice = 191; // The price at which the item is sold
+
+        // Calculate the profit by subtracting cost price from selling price
         int profit = sellingPrice - costPrice;
+
+        // Calculate the profit percentage using the formula: (profit / cost price) * 100
         double profitPercentage = profit / (double) costPrice * 100;
-        System.out.println("The Cost Price is INR " + costPrice + " and Selling Price is INR " + sellingPrice + "\n" + "The Profit is INR " + profit + " and the Profit Percentage is " + profitPercentage);
+
+        System.out.println("The Cost Price is INR " + costPrice + 
+                " and Selling Price is INR " + sellingPrice + "\n" +
+                "The Profit is INR " + profit + 
+                " and the Profit Percentage is " + profitPercentage);
+
         System.out.println();
     }
 }

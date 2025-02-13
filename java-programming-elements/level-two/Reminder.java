@@ -4,15 +4,22 @@
 // O/P => The Quotient is ___ and Reminder is ___ of two number ___ and ___
 
 import java.util.Scanner;
-public class Reminder{
+
+public class Reminder {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Taking input for two numbers
         System.out.println("Enter the first number: ");
         int number1 = sc.nextInt();
         System.out.println("Enter the second number: ");
         int number2 = sc.nextInt();
-        int quotient = number1 / number2;
-        int reminder = number1 % number2;
-        System.out.println("The Quotient is " + quotient + " and Reminder is " + reminder + " of two number " + number1 + " and " + number2);
+
+        // Calculating quotient and remainder
+        int quotient = number1 / number2; // Integer division to get the quotient
+        int remainder = number1 % number2; // Modulus operator to get the remainder
+
+        // Displaying the results
+        System.out.println("The Quotient is " + quotient + " and Remainder is " + remainder + " of two numbers " + number1 + " and " + number2);
     }
 }

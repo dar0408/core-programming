@@ -5,15 +5,24 @@
 
 
 import java.util.Scanner;
-public class AreaOfTriangle{
+
+public class AreaOfTriangle {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Enter the base of the triangle: ");
         float base = sc.nextFloat();
+
         System.out.println("Enter the height of the triangle: ");
         float height = sc.nextFloat();
+
+        // Calculate the area of the triangle using the formula: (1/2) * base * height
         float areaInSqInches = 0.5f * base * height;
+
+        // Convert the area from square inches to square centimeters (1 sq inch = 6.4516 sq cm)
         float areaInSqCm = areaInSqInches * 6.4516f;
-        System.out.println("The area of the triangle in square inches is " + areaInSqInches + " and in square centimeters is " + areaInSqCm);
+
+        System.out.println("The area of the triangle in square inches is " + areaInSqInches + 
+                " and in square centimeters is " + areaInSqCm);
     }
 }
