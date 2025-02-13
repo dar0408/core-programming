@@ -9,32 +9,42 @@
 // If op is neither of those 4 values, print Invalid Operator.
 
 
+import java.util.Scanner; // Import Scanner class for user input
 
-import java.util.Scanner;
 public class Switch {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Create Scanner object for user input
+
         System.out.println("Enter the first number: ");
-        double first = sc.nextDouble();
+        double first = sc.nextDouble(); // Read the first number from user
+
         System.out.println("Enter the second number: ");
-        double second = sc.nextDouble();
+        double second = sc.nextDouble(); // Read the second number from user
+
         System.out.println("Enter the operator (+, -, *, /): ");
-        String op = sc.next();
-        sc.close();
+        String op = sc.next(); // Read the operator as a string
+
+        sc.close(); // Close the scanner to prevent resource leaks
+
+        // Switch statement to perform the selected operation
         switch (op) {
-            case "+":
+            case "+": // Case for addition
                 System.out.println("The result of the addition is: " + (first + second));
                 break;
-            case "-":
+            case "-": // Case for subtraction
                 System.out.println("The result of the subtraction is: " + (first - second));
                 break;
-            case "*":
+            case "*": // Case for multiplication
                 System.out.println("The result of the multiplication is: " + (first * second));
                 break;
-            case "/":
-                System.out.println("The result of the division is: " + (first / second));
+            case "/": // Case for division
+                if (second != 0) { // Check to prevent division by zero
+                    System.out.println("The result of the division is: " + (first / second));
+                } else {
+                    System.out.println("Error: Division by zero is not allowed");
+                }
                 break;
-            default:
+            default: // Default case for invalid operator
                 System.out.println("Invalid Operator");
         }
     }

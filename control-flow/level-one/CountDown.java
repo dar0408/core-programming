@@ -9,11 +9,15 @@ import java.util.Scanner;
 public class CountDown {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Taking user input for the starting number of the countdown
         System.out.println("Enter the number: ");
         int counter = sc.nextInt();
+
+        // Loop to print the countdown from the given number to 1
         while(counter > 0){
             System.out.println(counter);
-            counter--;
+            counter--; // Decreasing the counter in each iteration
         }
     }
 }

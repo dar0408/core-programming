@@ -2,19 +2,22 @@
 // Hint => 
 // Take integer input and store it in the variable number
 // Using a for loop, find the multiplication table of number from 6 to 9 and print it in the format number * i = ___ 
-
 import java.util.Scanner;
+
 public class Table {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number: ");
         int num = sc.nextInt();
-        if(num > 0){
-            for(int i = 6; i <= 9; i++){
-                System.out.println(num + " * " + i + " = " + num * i);
+
+        // Ensure the input is a natural number (positive integer)
+        if (num > 0) {
+            System.out.println("Multiplication Table for " + num + ":");
+            for (int i = 6; i <= 9; i++) { // Looping from 6 to 9
+                System.out.println(num + " * " + i + " = " + (num * i));
             }
-        }else{
-            System.out.println("The number " + num + " is not a natural number");
+        } else {
+            System.out.println("The number " + num + " is not a natural number.");
         }
     }
 }

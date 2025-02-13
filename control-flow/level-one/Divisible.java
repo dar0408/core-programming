@@ -2,16 +2,19 @@
 // I/P => number
 // O/P => Is the number ___ divisible by 5? ___
 
-
 import java.util.Scanner;
 public class Divisible {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Taking user input for the number
         System.out.println("Enter the number: ");
         int num = sc.nextInt();
+
+        // Checking if the number is divisible by 5
         if(num % 5 == 0){
             System.out.println("Is the number " + num + " divisible by 5? Yes");
-        }else{
+        } else {
             System.out.println("Is the number " + num + " divisible by 5? No");
         }
     }

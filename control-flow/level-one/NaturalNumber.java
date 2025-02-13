@@ -9,16 +9,21 @@
 // The number ___ is not a natural number
 
 
-
 import java.util.Scanner;
 public class NaturalNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Taking user input for the number
         System.out.println("Enter the number: ");
         int num = sc.nextInt();
+
+        // Checking if the number is a natural number (greater than 0)
         if(num > 0){
+            // Using the formula for the sum of the first N natural numbers: n(n+1)/2
             System.out.println("The sum of " + num + " natural numbers is " + num * (num + 1) / 2);
-        }else{
+        } else {
+            // If the number is not a natural number, display a message
             System.out.println("The number " + num + " is not a natural number");
         }
     }

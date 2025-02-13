@@ -2,20 +2,23 @@
 // I/P => number1, number2, number3
 // O/P => Is the first number the smallest? ____
 
-
 import java.util.Scanner;
 public class Smallest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Taking user input for three numbers
         System.out.println("Enter the first number: ");
         int num1 = sc.nextInt();
         System.out.println("Enter the second number: ");
         int num2 = sc.nextInt();
         System.out.println("Enter the third number: ");
         int num3 = sc.nextInt();
+
+        // Checking if the first number is the smallest among the three
         if(num1 < num2 && num1 < num3){
             System.out.println("Is the first number the smallest? Yes");
-        }else{
+        } else {
             System.out.println("Is the first number the smallest? No");
         }
     }

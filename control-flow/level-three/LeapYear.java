@@ -4,29 +4,35 @@
 // Further, the Leap Year is a Year divisible by 4 and not 100 unless it is divisible by 400. E.g. 1800 is not a Leap Year and 2000 is a Leap Year.
 // Write code having multiple if else statements based on conditions provided above and a second part having only one if statement and multiple logical 
 
+import java.util.Scanner; // Import Scanner class for user input
 
-import java.util.Scanner;
 public class LeapYear {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Create Scanner object for user input
+
+        // Prompt the user to enter a year
         System.out.println("Enter the year: ");
-        int year = sc.nextInt();
-        sc.close();
+        int year = sc.nextInt(); // Read user input
+        sc.close(); // Close the scanner to prevent resource leaks
+
+        // Check if the year is valid (Gregorian calendar started in 1582)
         if (year >= 1582) {
-            if (year % 4 == 0) {
-                if (year % 100 == 0) {
-                    if (year % 400 == 0) {
+            // Check leap year conditions
+            if (year % 4 == 0) { // Year is divisible by 4
+                if (year % 100 == 0) { // Year is divisible by 100
+                    if (year % 400 == 0) { // Year is also divisible by 400
                         System.out.println("The year is a Leap Year");
-                    } else {
+                    } else { 
                         System.out.println("The year is not a Leap Year");
                     }
-                } else {
+                } else { 
                     System.out.println("The year is a Leap Year");
                 }
-            } else {
+            } else { 
                 System.out.println("The year is not a Leap Year");
             }
         } else {
+            // If the year is before 1582, it's not considered a leap year
             System.out.println("The year is not a Leap Year");
         }
     }
