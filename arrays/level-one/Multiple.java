@@ -8,30 +8,43 @@
 // Take another for loop to get the values of each element and add it to the total 
 // Finally display the total value
 
-
 import java.util.Scanner;
+
 public class Multiple {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
+        // Declare an array to store up to 10 numbers
         double[] num = new double[10];
-        double total = 0.0;
-        int index = 0;
+        double total = 0.0; // Variable to store the sum of entered numbers
+        int index = 0; // Index to track the number of elements entered
+        
         while (true) {
             System.out.println("Enter the number");
             double number = sc.nextDouble();
+            
+            // Break the loop if the entered number is less than or equal to zero
             if (number <= 0) {
                 break;
             }
+            
+            // Ensure the array does not exceed 10 elements
             if (index == 10) {
                 break;
             }
+            
+            // Store the valid number in the array and increment the index
             num[index] = number;
             index++;
         }
+        
+        // Iterate through the stored numbers and calculate the total
         for (int i = 0; i < index; i++) {
             System.out.println("The number " + num[i]);
             total += num[i];
         }
+        
+        // Display the total sum of valid numbers entered
         System.out.println("The total is " + total);
     }
 }

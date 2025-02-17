@@ -4,39 +4,38 @@
 // To do this, we need to create a new temp array of size maxDigit, copy from the current digits array the digits into the temp array, and assign the current digits array to the temp array
 // Now the digits array will be able to store all digits of the number in the array and then find the largest and second largest number
 
-
 import java.util.Scanner;
+import java.util.ArrayList;
+
 public class Rework {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number");
         int number = sc.nextInt();
-        int maxDigit = 10;
-        int[] digits = new int[maxDigit];
-        int index = 0;
+        
+        // Create an ArrayList to store digits
+        ArrayList<Integer> digits = new ArrayList<>();
+        
+        // Extract digits and store in the ArrayList
         while (number != 0) {
-            if (index == maxDigit) {
-                maxDigit += 10;
-                int[] temp = new int[maxDigit];
-                for (int i = 0; i < digits.length; i++) {
-                    temp[i] = digits[i];
-                }
-                digits = temp;
-            }
-            digits[index] = number % 10;
+            digits.add(number % 10);
             number /= 10;
-            index++;
         }
-        int largest = 0;
-        int secondLargest = 0;
-        for (int i = 0; i < index; i++) {
-            if (digits[i] > largest) {
+        
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        
+        // Find the largest and second largest digits
+        for (int digit : digits) {
+            if (digit > largest) {
                 secondLargest = largest;
-                largest = digits[i];
-            } else if (digits[i] > secondLargest) {
-                secondLargest = digits[i];
+                largest = digit;
+            } else if (digit > secondLargest) {
+                secondLargest = digit;
             }
         }
+        
+        // Output the result
         System.out.println("The largest digit is " + largest);
         System.out.println("The second largest digit is " + secondLargest);
     }

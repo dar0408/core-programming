@@ -6,30 +6,38 @@
 // To store more elements, reset the maxIndex to twice its size, use the temp array to store the elements from the factors array, and eventually assign the factors array to the temp array
 // Finally, Display the factors of the number
 
-
 import java.util.Scanner;
+
 public class Factors {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number to find factors");
-        int number = sc.nextInt();
-        int maxFactor = 10;
-        int[] factors = new int[maxFactor];
-        int index = 0;
+        int number = sc.nextInt(); // Read the number from the user
+        int maxFactor = 10; // Initial size of the array to store factors
+        int[] factors = new int[maxFactor]; // Array to store factors
+        int index = 0; // Index to track the number of factors found
+        
+        // Loop to find factors of the given number
         for (int i = 1; i <= number; i++) {
-            if (number % i == 0) {
-                factors[index] = i;
+            if (number % i == 0) { // Check if 'i' is a factor of 'number'
+                factors[index] = i; // Store factor in the array
                 index++;
+                
+                // If the array is full, double its size
                 if (index == maxFactor) {
                     maxFactor *= 2;
-                    int[] temp = new int[maxFactor];
+                    int[] temp = new int[maxFactor]; // Create a larger array
+                    
+                    // Copy old factors to the new array
                     for (int j = 0; j < factors.length; j++) {
                         temp[j] = factors[j];
                     }
-                    factors = temp;
+                    factors = temp; // Update reference to the new array
                 }
             }
         }
+        
+        // Print all found factors
         System.out.println("The factors of " + number + " are");
         for (int i = 0; i < index; i++) {
             System.out.println(factors[i]);

@@ -4,38 +4,51 @@
 // Copy the elements of the matrix to a 1D array. For this create a 1D array of size rows*columns as in int[] array = new int[rows * columns];
 // Define the index variable and Loop through the 2D array. Copy every element of the 2D array into the 1D array and increment the index
 // Note: For looping through the 2D array, you will need Nested for loop, Outer for loop for rows, and the inner for loops to access each element
-
-
 import java.util.Scanner;
+
 public class MultiDimension {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
+        // Get the number of rows from the user
         System.out.println("Enter the number of rows");
         int rows = sc.nextInt();
+        
+        // Get the number of columns from the user
         System.out.println("Enter the number of columns");
         int columns = sc.nextInt();
+        
+        // Initialize a 2D array (matrix) with the given dimensions
         int[][] matrix = new int[rows][columns];
+        
+        // Populate the 2D array with user input
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.println("Enter the element for row " + (i + 1) + " and column " + (j + 1));
                 matrix[i][j] = sc.nextInt();
             }
         }
+        
+        // Convert the 2D array into a 1D array
         int[] array = new int[rows * columns];
         int index = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                array[index] = matrix[i][j];
+                array[index] = matrix[i][j]; // Store matrix elements in 1D array sequentially
                 index++;
             }
         }
+        
+        // Display the 2D array
         System.out.println("The 2D array is");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
-            System.out.println();
+            System.out.println(); // Move to the next row
         }
+        
+        // Display the 1D array
         System.out.println("The 1D array is");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
